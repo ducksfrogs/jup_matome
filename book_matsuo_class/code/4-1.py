@@ -18,6 +18,15 @@ calc_steps = 1000
 
 dice_rolls = np.random.choice(dice_data, calc_steps)
 
-for i in rage(1,7):
+for i in range(1,7):
     p = len(dice_rolls[dice_rolls==i]) / calc_steps
     print(i, 'が出る確率', p)
+
+
+prob_data = np.array([])
+
+for i in range(1,7):
+    p = len(dice_rolls[dice_rolls==i]) / calc_steps
+    prob_data = np.append(p)
+
+plt.barprot(dice_data, prob_data)
